@@ -3,8 +3,8 @@ import { useState } from "react";
 import confetti from "canvas-confetti";
 
 const turns = {
-  X: '❌',
-  O: '⭕'
+  X: "❌",
+  O: "⭕",
 };
 
 const Square = ({ children, updateBoard, isSelected, index }) => {
@@ -55,14 +55,14 @@ function App() {
   };
 
   const resetGame = () => {
-    setBoard(Array(9).fill(null))
-    setTurn(turns.X)
-    setWinner(null)
-  }
+    setBoard(Array(9).fill(null));
+    setTurn(turns.X);
+    setWinner(null);
+  };
 
   const checkEndGame = (newBoard) => {
-    return newBoard.every((square) => square !== null)
-  }
+    return newBoard.every((square) => square !== null);
+  };
 
   const updateBoard = (index) => {
     if (board[index] || winner) return;
@@ -81,8 +81,7 @@ function App() {
       confetti();
       setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
-      setWinner(false)
-      
+      setWinner(false);
     }
   };
 
@@ -107,7 +106,7 @@ function App() {
       {winner !== null && (
         <section className='winner'>
           <div className='text'>
-            <h2> { winner === false ? 'Tie' : 'Win:' } </h2>
+            <h2> {winner === false ? "Tie" : "Win:"} </h2>
 
             <header className='win'>
               {winner && <Square>{winner}</Square>}
