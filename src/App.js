@@ -3,8 +3,8 @@ import { useState } from "react";
 import confetti from "canvas-confetti";
 
 const turns = {
-  X: "x",
-  O: "o",
+  X: '❌',
+  O: '⭕'
 };
 
 const Square = ({ children, updateBoard, isSelected, index }) => {
