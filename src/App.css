@@ -1,4 +1,4 @@
-.game {  
+.game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -20,16 +20,47 @@
   justify-content: center;
   align-items: center;
   border-radius: 0.6rem;
-
 }
 
 .turn .square {
   display: inline;
   padding: 20px;
   border: none;
-  font-size: 2rem;  
+  font-size: 2rem;
 }
 
 .square.is-selected {
   background-color: aqua;
+}
+
+.winner .square {
+  font-size: 5rem;
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  border-color: transparent;
+  margin: 0 auto;
+}
+
+.winner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.winner .text {
+  font-size: 2rem;
+}
+
+button {
+  margin-top: 30px;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
 }
